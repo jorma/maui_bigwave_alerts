@@ -1,6 +1,6 @@
 #! /bin/bash
 #
-#
+# blah blah blah
 
 cd /Users/jorma/Code/maui_bigwave_alerts/images
 rm /Users/jorma/Code/maui_bigwave_alerts/images/*.png
