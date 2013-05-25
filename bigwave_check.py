@@ -13,7 +13,9 @@ def main():
 	# Uncomment line below to download image files
 	#subprocess.call(['./download.sh'])
 
-	images = ["images/hi_comp_1.png"]
+	#images = ["/Users/jorma/Code/maui_wind_python/misc/wind_blue.png"]
+	images = ["images/test2.gif"]
+
 	
 	for x in range(0, 1):
 		im = Image.open(images[x])
@@ -37,7 +39,7 @@ def waveCheck(imageName):
 			line = line.replace('\n', '')
 			waveArea.append(line)
 
-	for x in range(0, 200):
+	for x in range(0, 1659):
 
 		coordinate = waveArea[x]	
 		coordinatePts = coordinate.split(",")
@@ -51,7 +53,7 @@ def waveCheck(imageName):
 		#print color
 		print coordinate + " : " + str(color)
 	
-		if color == (102,255,255): # Pink
+		if color == (255,255,51): # Pink
 			countPink += 1
 	
 		elif color == (255, 153, 255): # Dark Pink
@@ -62,7 +64,7 @@ def waveCheck(imageName):
 
 	percentPink = round((countPink / numOfPts) * 100)
 
-	#print "Percent Pink: " + str(percentPink)
+	print "Percent Pink: " + str(percentPink)
 	
 	if (percentPink >= 50):
 		totalPink += 1
