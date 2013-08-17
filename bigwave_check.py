@@ -13,23 +13,13 @@ def main():
 	# Uncomment line below to download image files
 	#subprocess.call(['./download.sh'])
 
-	#images = ["/Users/jorma/Code/maui_wind_python/misc/wind_blue.png"]
-	images = ["images/test2.gif"]
+	imageFile = Image.open("images/test3.png")
+	rgb_imageFile = imageFile.convert('RGB')
 
-	
-	for x in range(0, 1):
-		im = Image.open(images[x])
-		waveCheck(im)
-	
-	print "Total Pink: " + str(totalPink)
-	
-	if totalPink >= 5:
-		SendEmail("Jorma","aloha@jorma.com","Looks like Big Swell is on the way!")
-	else:
-		pass
+	waveCheck(rgb_imageFile)
 		
 	
-def waveCheck(imageName):
+def waveCheck():
 	numOfPts = 16570.0 # this number is from the number of coordinate points in the waveArea list
 	countPink = 0
 	global totalPink
@@ -53,7 +43,7 @@ def waveCheck(imageName):
 		#print color
 		print coordinate + " : " + str(color)
 	
-		if color == (255,255,51): # Pink
+		if color == (255, 253, 75): # Pink
 			countPink += 1
 	
 		elif color == (255, 153, 255): # Dark Pink
@@ -74,15 +64,6 @@ def waveCheck(imageName):
 	
 def SendEmail(name,emailAddr,emailBody):
 	print "********Send Email*********"
-	msg = MIMEText('Aloha -\n\n ' + emailBody) 
-	msg['To'] = email.utils.formataddr((name, emailAddr))
-	msg['From'] = email.utils.formataddr(('Jorma', 'jorma@minustide.net'))
-	msg['Subject'] = 'Email Alert: Calm day in Lahaina'
-
-	conn = smtplib.SMTP('mail.minustide.net')
-	conn.login('jorma@minustide.net', 'xxxxxxxx')
-	conn.sendmail(msg['From'], msg['To'], msg.as_string())
-	conn.quit()
 
 if __name__ == '__main__':
 	main()
