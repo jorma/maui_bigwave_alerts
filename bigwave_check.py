@@ -13,7 +13,7 @@ def main():
 	# Uncomment line below to download image files
 	#subprocess.call(['./download.sh'])
 
-	imageFile = Image.open("images/test3.png")
+	imageFile = Image.open("images/test.jpg")
 	rgb_imageFile = imageFile.convert('RGB')
 
 	waveCheck(rgb_imageFile)

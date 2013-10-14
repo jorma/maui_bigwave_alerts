@@ -1,0 +1,8 @@
+Lessons Learned:
+
+Creating Array from Wind/Wave Area
+	- Run calulate_waveAreaOfInterest.py
+	- Copy Results to new TextMate document
+	- Find and replace
+	
+	
