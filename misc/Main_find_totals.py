@@ -5,6 +5,8 @@ import subprocess
 # black is 255, 255, 255
 # white is 0, 0, 0
 
+
+
 def bigSwellCheck():
 	### create an array of coordinates for the aoi
 	waveArea=[]
@@ -221,5 +223,6 @@ def bigSwellCheck():
 	
 	return percentPink
 
+bigSwellCheck()
 
 #rgb_waveImage.save("/Users/jorma/Code/maui_bigwave_alerts/misc/foo_new.png")
