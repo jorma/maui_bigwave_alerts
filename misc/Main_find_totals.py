@@ -201,13 +201,23 @@ def bigSwellCheck():
 		else:
 			pass
 
-	totalPinkCount = float(countColor15 + countColor16 + countColor17 + countColor18 + countColor19)
 
+	totalBlueCount = float(countColor00 + countColor01 + countColor02 + countColor03 + countColor04)
+	totalGreenYellowCount = float(countColor05 + countColor06 + countColor07 + countColor08 + countColor09)
+	totalRedCount = float(countColor10 + countColor11 + countColor12 + countColor13 + countColor14)
+ 	totalPinkCount = float(countColor15 + countColor16 + countColor17 + countColor18 + countColor19)   
+        
 	#totalPinkCount = float(countColor03) #... use this for testing other colors
 
+	percentBlue = 100 * (totalBlueCount / (numOfPts - countColor24))
+	percentGreenYellow = 100 * (totalGreenYellowCount / (numOfPts - countColor24))
+	percentRed = 100 * (totalRedCount / (numOfPts - countColor24))
 	percentPink = 100 * (totalPinkCount / (numOfPts - countColor24)) # subtract white to remove white direction arrows from calculations.
 
-	#print str(percentPink) + " percent pink "
+	print str(percentBlue) + " percent blue "
+	print str(percentGreenYellow) + " percent green-yellow "
+	print str(percentRed) + " percent red "
+	print str(percentPink) + " percent pink "
 	
 	return percentPink
 
